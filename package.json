@@ -9,7 +9,7 @@
     "nodemon": "^3.1.0"
   },
   "scripts": {
-    "start": "nodmon server.js"
+    "start": "nodemon server.js"
   },
   "name": "network-_services",
   "version": "1.0.0",
