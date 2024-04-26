@@ -4,6 +4,8 @@
     "dotenv": "^16.4.5",
     "express": "^4.18.3",
     "ip": "^2.0.1",
+    "ip-address": "^9.0.5",
+    "ip-toolkit": "^1.0.11",
     "mongodb": "^6.4.0",
     "mongoose": "^8.2.0",
     "nodemon": "^3.1.0"
@@ -14,7 +16,6 @@
   "name": "network-_services",
   "version": "1.0.0",
   "main": "cidrModel.js",
-  "devDependencies": {},
   "author": "sravya veeravalli",
   "license": "ISC",
   "description": "CIDR IP address calculator"
