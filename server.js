@@ -22,16 +22,12 @@ app.use(cors({
 }));
 
 // route handler
-app.post('/cidr/calculate-cidr', (req, res) => {
-    // 2001:0:ce49:7601:e866:efff:62c3:fffe/33
+app.post('/cidr/ipv4', (req, res) => {
     // 172.16.1.1
 
     // if valid IP but not CIDR then ask user to write CIDR
     let isValidIp4 = IPv4.isValidIP(req.body.cidr)
-    let isValidIp6 = IPv6.isValidIP(req.body.cidr)
-
     let isIpv4 = IPv4.isCIDR(req.body.cidr)
-    let isIpv6 = IPv6.isCIDR(req.body.cidr)
 
     // if ipv4
     if(isValidIp4 || isIpv4) {
@@ -46,6 +42,16 @@ app.post('/cidr/calculate-cidr', (req, res) => {
             res.json({err: "Not valid CIDR notation Eg: 128.24.24.1/32"})
         }    
     }  
+     
+});
+
+// route handler
+app.post('/cidr/ipv6', (req, res) => {
+    // 2001:0:ce49:7601:e866:efff:62c3:fffe/33
+
+    // if valid IP but not CIDR then ask user to write CIDR
+    let isValidIp6 = IPv6.isValidIP(req.body.cidr)
+    let isIpv6 = IPv6.isCIDR(req.body.cidr)
     
     // if ipv6
     if(isValidIp6 || isIpv6) {
